@@ -1,15 +1,33 @@
-Starknet AA
+# EC en Cairo - STARK Curve
+Como hemos visto en el contexto de los sistemas criptográficos, la elección de la curva elíptica adecuada es de suma importancia. En este caso, se utiliza una variante de EC la cual ha sido especialmente diseñada y optimizada para su aplicación en el entorno de Starknet.
 
-Esperamos que haya disfrutado de la primera parte, donde se presentaron conceptos generales de criptografía. Ahora nos adentraremos en un tema aún más interesante, Starknet y cómo mejora el ecosistema, exploraremos cómo los contratos de cuentas (CA) y el esquema de firmas abstraídas de Starknet ofrecen beneficios significativos frente al  ERC-4337.
+La STARK Curve [**(EC.cairo)**](https://github.com/starkware-libs/cairo-lang/blob/361fe32d5930db340ea78fe05aedfe706f6c9405/src/starkware/cairo/common/ec.cairo) se define mediante la ecuación:
 
-Si deseas aprender más sobre el concepto y las variantes del ERC-4337, te recomendamos leer esta serie de artículos en el blog de Argent. La serie está compuesta por la Parte 1, Parte 2 y Parte 3 . Argent y Braavos son Smart wallets que aprovechan el poder del AA nativo en Starknet. También te recomendamos leer los artículos de Braavos de Guide 101 AA y Security Pyramid AA, los cuales presentan optimizaciones adicionales y capas de seguridad que exploraremos más adelante. Estos recursos te proporcionarán una mejor comprensión del concepto de AA y del ERC-4337.
+![graph](./assets/stark_curve.png)
+<div align="center">
+<em></em>
+</div>
 
-¡Así que sin más preámbulos, bienvenidos a Starknet!
+Los valores específicos de `α`, `β` y `p` utilizados en esta curva han sido cuidadosamente seleccionados para proporcionar propiedades criptográficas sólidas y un rendimiento eficiente en el contexto de los contratos de cuenta nativos en Starknet.
 
-En el ecosistema de Starknet, se encuentran diversas metodologías para generar claves y firmas. A diferencia de las cuentas EOA, en Starknet se emplea Account Abstraction (AA) para la implementación de Contratct Accounts (CA). Estos contratos son responsables de establecer la lógica en nuestras cuentas dentro de Starknet, incluyendo la validación del esquema de firma abstraído.
+En particular, los valores de `α`, `β` (notese que es `π` “PI” sin decimales usando 67 digitos) y `p` son los siguientes:
 
-En lugar de utilizar ECDSA, Starknet utiliza una variación llamada STARK Curve, un tipo de curva elíptica más amigable y optimizada que es nativa en en el ecosistema, esta variante nos ofrece mejoras y características específicas para las necesidades de Starknet.
+![graph](./assets/stark_curve1.png)
+<div align="center">
+<em></em>
+</div>
 
-Lo grandioso de tener esta abstracción nativa es que permite añadir diferentes lógicas en tus esquemas o capas adicionales. Normalmente, se utiliza el sistema asimétrico secp256k1, basado en la aleatoriedad y operaciones matemáticas, para generar claves privadas y públicas. Sin embargo, también se pueden añadir curvas adicionales de forma nativa al crear un CA, como lo ha hecho Braavos con la secp256r1. Esta curva cuenta con un sistema de firmas integrado, mejor optimizado y preparado para dispositivos modernos, donde el signer puede almacenar los datos habilitados por biometricidad en dispositivos aislados y seguros, como el módulo "Enclave" de Apple.
+Estos valores aseguran que la curva elíptica Stark-friendly cumple con los requisitos de seguridad necesarios para su aplicación en sistemas criptográficos.
 
-La AA desempeña un papel crucial al abstraer el esquema de firmas o verificación de firmas de la ejecución. Como vimos anteriormente, ECDSA genera una clave privada y una clave pública que luego se cifran y se comparten públicamente, en este caso el poseedor de esta clave privada y del esquema de firma asociado tiene el poder de realizar transacciones en Starknet, los dos tipos de transacciones son DEPLOY o INVOKE
+Además se utiliza un punto generador [(G)](https://docs.starkware.co/starkex/crypto/stark-curve.html) específico asociado a esta curva. El punto generador `G` se define como:
+
+![graph](./assets/stark_curve_g.png)
+<div align="center">
+<em></em>
+</div>
+
+Este punto generador desempeña un papel fundamental en el esquema de firmas digitales ECDSA, permitiendo la generación de claves públicas y privadas como aprendimos en Generador de Claves, así como la verificación de firmas digitales en el contexto de la curva elíptica Stark-friendly.
+
+La elección de la curva elíptica Stark-friendly y el punto generador `G` asociado a ella proporcionan una base sólida y optimizada para la implementación de esquemas criptográficos en el entorno de Starknet. Estos elementos garantizan la seguridad y eficiencia necesarias para la creación de contratos de cuenta nativos y la verificación de firmas digitales en el sistema.
+
+Si desea probar y adentrarse en el despliegue de cuentas en Starknet, o si está interesado en aprender cómo se generan y calculan off-chain, y luego financiar esas cuentas para que los contratos de cuenta se autodesplieguen, le animamos a seguir los ejercicios oficiales de [**Starknet-Edu Account**](https://github.com/starknet-edu/starknet-accounts/blob/answers/ES%20README.md) o las [**Guías Completas Cairo 1**](https://github.com/Nadai2010/Nadai-StarknetEs-Guia-Cairo1#configuraci%C3%B3n-de-una-cuenta) proporcionadas por [Starknet-Es](https://twitter.com/StarkNetEs) para realizar pruebas reales.

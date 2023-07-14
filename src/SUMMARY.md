@@ -19,18 +19,12 @@
         - [Kyber Crystal](./Kyber_Crystal.md)
         - [EOA y AA - Firmantes](./EOA_AA.md)
     - [Starknet AA](./Starknet_AA.md)
-
-EC en Cairo - STARK Curve
-
-MyBraavos Secp256r1
-
-Creación de una Stark Key en StarkEx
-
-Starknet y Funciones Hash
-
-Hash Keccak
-
-Hash Pedersen
+        - [EC en Cairo - STARK Curve](./Stark_Curve.md)
+        - [MyBraavos Secp256r1](./Secp256r1.md)
+        - [Creación de una Stark Key en StarkEx](./Stark_Key.md)
+    - [Starknet y Funciones Hash](Starknet_funciones_hash.md)
+        - [Hash Keccak](./Keccak_Starknet.md)
+        - [Hash Pedersen](./Pedersen_Starknet.md)
 
 Hash Poseidon
 
