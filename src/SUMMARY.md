@@ -25,35 +25,18 @@
     - [Starknet y Funciones Hash](Starknet_funciones_hash.md)
         - [Hash Keccak](./Keccak_Starknet.md)
         - [Hash Pedersen](./Pedersen_Starknet.md)
-
-Hash Poseidon
-
-Hashing de Array
-
-S-T-ARKs
-
-Propiedades de las STARKs
-
-STARKs eficientes
-
-IOPs
-
-Polinomios
-
-Creación de una STARK
-
-Aritmetización
-
-Polinomio para nuestra Traza
-
-Composición Polinomial
-
-Ampliando Polinomio
-
-Pruebas de Bajo Grado
-
-FRI
-
-Leve introducción a Cairo (AIR)
+        - [Hash Poseidon](./Poseidon_Starknet.md)
+        - [Hashing de Array](./Hashing_Array.md)
+    - [S-T-ARKs](./Starks.md)   
+        - [Propiedades de las STARKs](.Starks_Propiedades.md)
+        - [STARKs eficientes](.Starks_Eficientes.md)
+        - [IOPs](.Starks_Iops.md)
+        - [Polinomios](.Starks_Polinomios.md)
+    - [Creación de un STARK](.Starks_Creacion.md)
+        - [Aritmetización](./Starks_Aritmetizacion.md)
+        - [Polinomio y Composición para nuestra Traza](.Starks_Traza.md)
+        - [Pruebas de Bajo Grado](Starks_Bajo.md)
+        - [FRI](.Starks_Fri.md)
+    - [Leve introducción a Cairo (AIR)](.Cairo.md)
 
 Conclusiones
