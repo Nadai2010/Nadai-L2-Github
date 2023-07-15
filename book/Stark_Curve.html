@@ -163,7 +163,7 @@
 <div align="center">
 <em></em>
 </div>
-<p>Este punto generador desempeña un papel fundamental en el esquema de firmas digitales ECDSA, permitiendo la generación de claves públicas y privadas como aprendimos en Generador de Claves, así como la verificación de firmas digitales en el contexto de la curva elíptica Stark-friendly.</p>
+<p>Este punto generador desempeña un papel fundamental en el esquema de firmas digitales ECDSA, permitiendo la generación de claves públicas, como aprendimos al momento de hablar del Generador de Claves.</p>
 <p>La elección de la curva elíptica Stark-friendly y el punto generador <code>G</code> asociado a ella proporcionan una base sólida y optimizada para la implementación de esquemas criptográficos en el entorno de Starknet. Estos elementos garantizan la seguridad y eficiencia necesarias para la creación de contratos de cuenta nativos y la verificación de firmas digitales en el sistema.</p>
 <p>Si desea probar y adentrarse en el despliegue de cuentas en Starknet, o si está interesado en aprender cómo se generan y calculan off-chain, y luego financiar esas cuentas para que los contratos de cuenta se autodesplieguen, le animamos a seguir los ejercicios oficiales de <a href="https://github.com/starknet-edu/starknet-accounts/blob/answers/ES%20README.md"><strong>Starknet-Edu Account</strong></a> o las <a href="https://github.com/Nadai2010/Nadai-StarknetEs-Guia-Cairo1#configuraci%C3%B3n-de-una-cuenta"><strong>Guías Completas Cairo 1</strong></a> proporcionadas por <a href="https://twitter.com/StarkNetEs">Starknet-Es</a> para realizar pruebas reales.</p>
 
@@ -196,22 +196,6 @@
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script>
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 

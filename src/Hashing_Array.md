@@ -6,7 +6,7 @@ El hashing de un array implica aplicar la función de hash correspondiente a cad
 El hashing de un array es útil en muchas aplicaciones, como la verificación de integridad de datos, la indexación eficiente de información y la identificación única de elementos.
 
 ## Pedersen
-La función de hash Pedersen, denotada como `h`, se utiliza para calcular el hash de un array de elementos de campo. Consideremos un arreglo `a₁`, `a₂`, ..., `aₙ` que contiene `n` elementos. La definición de `h(a₁ a₂, ..., aₙ)` es la siguiente:
+La función hash Pedersen, denotada como `h`, se utiliza para calcular el hash de un array de elementos de campo. Consideremos un arreglo `a₁`, `a₂`, ..., `aₙ` que contiene `n` elementos. La definición de `h(a₁ a₂, ..., aₙ)` es la siguiente:
 
 1. Comenzamos con un valor inicial de 0.
 2. Aplicamos la función de hash h al primer elemento a₁ junto con el valor inicial. El resultado se convierte en el nuevo valor inicial.

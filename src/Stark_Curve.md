@@ -26,7 +26,7 @@ Además se utiliza un punto generador [(G)](https://docs.starkware.co/starkex/cr
 <em></em>
 </div>
 
-Este punto generador desempeña un papel fundamental en el esquema de firmas digitales ECDSA, permitiendo la generación de claves públicas y privadas como aprendimos en Generador de Claves, así como la verificación de firmas digitales en el contexto de la curva elíptica Stark-friendly.
+Este punto generador desempeña un papel fundamental en el esquema de firmas digitales ECDSA, permitiendo la generación de claves públicas, como aprendimos al momento de hablar del Generador de Claves.
 
 La elección de la curva elíptica Stark-friendly y el punto generador `G` asociado a ella proporcionan una base sólida y optimizada para la implementación de esquemas criptográficos en el entorno de Starknet. Estos elementos garantizan la seguridad y eficiencia necesarias para la creación de contratos de cuenta nativos y la verificación de firmas digitales en el sistema.
 

@@ -1,5 +1,5 @@
 # My Braavos - Secp256r1
-Emepecemos con un dato que no habíamos comentando antes, la `k` en `sepc256k1` significa [**Koblitz**](https://es.wikipedia.org/wiki/Neal_Koblitz) y el `r` en `sepc256r1` significa aleatorio.
+Empecemos con un dato que no habíamos comentando antes, la `k` en `sepc256k1` significa [**Koblitz**](https://es.wikipedia.org/wiki/Neal_Koblitz) y el `r` en `sepc256r1` significa random.
 
 Braavos ha incorporado la firma y validación de transacciones utilizando `secp256r1`, lo que brinda una excelente experiencia al usuario final al permitir transacciones con firma biométrica en el dispositivo del usuario. Esto añade un nivel adicional de seguridad. Braavos ha presentado en su blog una [Pirámide de Seguridad AA](https://braavos.app/account-abstraction-security-pyramid/).
 
@@ -29,7 +29,7 @@ Esto significa que incluso si el núcleo del procesador de la aplicación del di
 
 Vemos que esta implementación de la firma ECDSA `secp256r1` en Cairo no es nativa, lo que significa que no tiene un Builtin dedicado nativo, esto puede llevar a un alto costo de gas al validar la firma. Sin embargo, Braavos es uno de los que han adoptado esta maravillosa novedad y está trabajando en mejorar la eficiencia de este proceso.
 
-demás, aprovechando la funcionalidad de Multi-Call incorporada, los usuarios pueden agrupar múltiples transacciones en una única transacción atómica. Esto no solo acelera y reduce los costos de las transacciones, sino que también permite a los usuarios aprobar la cantidad exacta que desean depositar, lo cual mejora la seguridad al eliminar la necesidad de [aprobación infinita](https://hackernoon.com/erc20-infinite-approval-a-battle-between-convenience-and-security-lk60350r)
+Además, aprovechando la funcionalidad de Multi-Call incorporada, los usuarios pueden agrupar múltiples transacciones en una única transacción atómica. Esto no solo acelera y reduce los costos de las transacciones, sino que también permite a los usuarios aprobar la cantidad exacta que desean depositar, lo cual mejora la seguridad al eliminar la necesidad de [aprobación infinita](https://hackernoon.com/erc20-infinite-approval-a-battle-between-convenience-and-security-lk60350r)
 
 En cuanto a la **gestión de firmantes**, cuando se añade un firmante adicional, como un Hardware Signer o Protected Signer, el firmante original basado en semillas ya no puede firmar transacciones, a menos que se solicite la eliminación del firmante adicional y se regrese al firmante basado en semillas. **Esta solicitud tiene un retraso de tiempo (actualmente de 4 días)** para su procesamiento.
 

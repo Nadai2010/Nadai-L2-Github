@@ -147,7 +147,7 @@
                         <h1 id="starknet-y-funciones-hash"><a class="header" href="#starknet-y-funciones-hash">Starknet y Funciones Hash</a></h1>
 <p>Hemos visto la importancia de las firmas, el poder de AA y la asociación de los hash dentro del ecosistema de Starknet y StarkEx. Ahora, profundicemos en cómo se utilizan y los diferentes tipos de hash que podemos encontrar.</p>
 <h2 id="dominio-y-rango"><a class="header" href="#dominio-y-rango">Dominio y rango</a></h2>
-<p>Todas las salidas de las funciones de hash se mapean eventualmente a elementos en <code>𝔽ₚ</code> con <code>p = 2²⁵¹ + 17 ⋅ 2¹⁹² + 1</code>  como vimos en la Stark Curve.</p>
+<p>Todas las salidas de las funciones de hash se mapean eventualmente a elementos en <code>𝔽ₚ</code> con <code>p = 2²⁵¹ + 17 ⋅ 2¹⁹² + 1</code> como vimos en la Stark Curve.</p>
 <p>Las funciones hash son componentes clave en las especificaciones de Starknet, y se utilizan para mapear las salidas de los cálculos a elementos en el campo finito <code>𝔽ₚ</code>. A continuación, explicaremos las tres funciones hash utilizadas en Starknet de manera más clara:</p>
 <p><img src="./assets/Stark_func_hash.png" alt="graph" /></p>
 <div align="center">
@@ -156,7 +156,7 @@
 <ol>
 <li><a href="https://docs.starknet.io/documentation/architecture_and_concepts/Hashing/hash-functions/#starknet_keccak"><strong>sn_keccak:</strong></a> Esta función hash se basa en el algoritmo KECCAK, que es una familia de funciones hash criptográficas como vimos antes. Su dominio es el conjunto de cadenas de bits compuestas por ceros y unos <code>{0,1}*</code> y su rango es el campo finito <code>𝔽ₚ</code> La función toma una cadena de bits como entrada y produce una salida en el campo finito <code>𝔽ₚ</code>.</li>
 <li><a href="https://docs.starknet.io/documentation/architecture_and_concepts/Hashing/hash-functions/#pedersen_hash"><strong>Pedersen:</strong></a> La función hash Pedersen es una función hash computacionalmente segura que se utiliza en la construcción de criptografía de compromiso cero y otras primitivas criptográficas. Su dominio es el conjunto de pares de elementos del campo finito <code>𝔽²p</code>, donde <code>p</code> es un número primo, y su rango es el campo finito <code>𝔽p</code>. La función toma un par de elementos del campo finito <code>𝔽²p</code> como entrada y produce una salida en el campo finito <code>𝔽p</code>.</li>
-<li><a href="https://docs.starknet.io/documentation/architecture_and_concepts/Hashing/hash-functions/#poseidon_hash"><strong>Poseidon:</strong></a> La función hash Poseidon es una función hash criptográfica diseñada para resistir ataques criptográficos, como los ataques de preimagen y colisión. Su dominio es un conjunto de elementos del campo finito <code>𝔽p</code>, que incluye el cero y los elementos inversos multiplicativos, y su rango también es el campo finito <code>𝔽p</code>. La función toma un conjunto de elementos del campo finito <code>𝔽p</code> como entrada y produce una salida en el campo finito <code>𝔽p</code>.</li>
+<li><a href="https://docs.starknet.io/documentation/architecture_and_concepts/Hashing/hash-functions/#poseidon_hash"><strong>Poseidon:</strong></a> La función hash Poseidon es una función hash criptográfica. Su dominio es un conjunto de elementos del campo finito <code>𝔽p</code>, que incluye el cero y los elementos inversos multiplicativos, y su rango también es el campo finito <code>𝔽p</code>. La función toma un conjunto de elementos del campo finito <code>𝔽p</code> como entrada y produce una salida en el campo finito <code>𝔽p</code>.</li>
 </ol>
 <p>Las funciones de hash mencionadas son añadidas como <a href="https://mirror.xyz/0x7D1c14939AcEE5ca141c8beDF3474AFBf3884041/RTgQnMxeVGRCczih1pGXKy2KGFcU_xmf2NMx52wDgH0"><strong>Builtin</strong></a> (AIR integradas específicas de aplicaciones), que se utilizan como herramientas adicionales en el protocolo para garantizar la seguridad y la integridad de las transacciones y los datos.</p>
 <p>Estas funciones hash desempeñan un papel fundamental en las operaciones de Starknet al garantizar la integridad y seguridad de los cálculos realizados en el sistema.</p>
@@ -190,22 +190,6 @@
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script>
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 

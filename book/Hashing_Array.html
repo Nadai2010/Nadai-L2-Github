@@ -149,7 +149,7 @@
 <p>El hashing de un array implica aplicar la función de hash correspondiente a cada elemento del array, de manera secuencial o iterativa. Esto permite resumir y representar de manera compacta la información contenida en el array, independientemente de su longitud o contenido específico.</p>
 <p>El hashing de un array es útil en muchas aplicaciones, como la verificación de integridad de datos, la indexación eficiente de información y la identificación única de elementos.</p>
 <h2 id="pedersen"><a class="header" href="#pedersen">Pedersen</a></h2>
-<p>La función de hash Pedersen, denotada como <code>h</code>, se utiliza para calcular el hash de un array de elementos de campo. Consideremos un arreglo <code>a₁</code>, <code>a₂</code>, ..., <code>aₙ</code> que contiene <code>n</code> elementos. La definición de <code>h(a₁ a₂, ..., aₙ)</code> es la siguiente:</p>
+<p>La función hash Pedersen, denotada como <code>h</code>, se utiliza para calcular el hash de un array de elementos de campo. Consideremos un arreglo <code>a₁</code>, <code>a₂</code>, ..., <code>aₙ</code> que contiene <code>n</code> elementos. La definición de <code>h(a₁ a₂, ..., aₙ)</code> es la siguiente:</p>
 <ol>
 <li>Comenzamos con un valor inicial de 0.</li>
 <li>Aplicamos la función de hash h al primer elemento a₁ junto con el valor inicial. El resultado se convierte en el nuevo valor inicial.</li>
@@ -209,22 +209,6 @@
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script>
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 

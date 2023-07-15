@@ -6,13 +6,13 @@ _Si deseas aprender más sobre el concepto y las variantes del ERC-4337, te reco
 
 **¡Así que sin más preámbulos, bienvenidos a Starknet!**
 
-En el ecosistema de Starknet, se encuentran diversas metodologías para generar claves y firmas. A diferencia de las cuentas EOA, en Starknet se emplea **Account Abstraction** [**(AA)**](https://book.starknet.io/chapter_5/index.html) para la implementación de **Contratct Accounts** [(CA)](https://book.starknet.io/chapter_5/index.html#ethereums_current_account_system_a_closer_look). Estos contratos son responsables de establecer la lógica en nuestras cuentas dentro de Starknet, incluyendo la validación del esquema de firma abstraído.
+En el ecosistema de Starknet, se encuentran diversas metodologías para generar claves y firmas. A diferencia de las cuentas EOA, en Starknet se emplea **Account Abstraction** [**(AA)**](https://book.starknet.io/chapter_5/index.html) para la implementación de **Contract Accounts** [(CA)](https://book.starknet.io/chapter_5/index.html#ethereums_current_account_system_a_closer_look). Estos contratos son responsables de establecer la lógica en nuestras cuentas dentro de Starknet, incluyendo la validación del esquema de firma abstraído.
 
-En lugar de utilizar ECDSA, Starknet utiliza una variación llamada [**STARK Curve**], un tipo de curva elíptica más amigable y optimizada que es nativa en en el ecosistema, esta variante nos ofrece mejoras y características específicas para las necesidades de Starknet.
+En lugar de utilizar ECDSA, Starknet utiliza una variación llamada [**STARK Curve**], un tipo de curva elíptica más amigable y optimizada que es nativa en el ecosistema, esta variante nos ofrece mejoras y características específicas para las necesidades de Starknet.
 
-Lo grandioso de tener esta abstracción nativa es que permite añadir diferentes lógicas en tus esquemas o capas adicionales. Normalmente, se utiliza el sistema asimétrico `secp256k1`, basado en la aleatoriedad y operaciones matemáticas, para generar claves privadas y públicas. Sin embargo, también se pueden añadir curvas adicionales de forma nativa al crear un CA, como lo ha hecho Braavos con la [secp256r1](https://github.com/myBraavos/efficient-secp256r1). Esta curva cuenta con un sistema de firmas integrado, mejor optimizado y preparado para dispositivos modernos, donde el signer puede almacenar los datos habilitados por biometricidad en dispositivos aislados y seguros, como el módulo "Enclave" de Apple.
+Lo grandioso de tener esta abstracción nativa es que permite añadir diferentes lógicas en tus esquemas o capas adicionales. Normalmente, se utiliza un sistema asimétrico usando la curva elíptica `secp256k1`, basado en la pseudoaleatoriedad y diversas operaciones matemáticas utilizando dicha curva, para generar claves privadas y públicas. Sin embargo, también se pueden añadir curvas adicionales de forma nativa al crear un CA, como lo ha hecho Braavos con la [secp256r1](https://github.com/myBraavos/efficient-secp256r1). Esta curva cuenta con un sistema de firmas integrado, mejor optimizado y preparado para dispositivos modernos, donde el signer puede almacenar los datos habilitados por biometricidad en dispositivos aislados y seguros, como el módulo "Enclave" de Apple.
 
-La AA desempeña un papel crucial al abstraer el esquema de firmas o verificación de firmas de la ejecución. Como vimos anteriormente, ECDSA genera una clave privada y una clave pública que luego se cifran y se comparten públicamente, en este caso el poseedor de esta clave privada y del esquema de firma asociado tiene el poder de realizar transacciones en Starknet, los [dos tipos de transacciones](https://book.starknet.io/chapter_8/transactions.html) son `DEPLOY` o `INVOKE`
+La AA desempeña un papel crucial al abstraer el esquema de firmas o verificación de firmas de la ejecución. Como vimos anteriormente, podemos generar una clave privada y mediante ECDSA generar una clave pública. En este caso el poseedor de esta clave privada y del esquema de firma asociado tiene el poder de realizar transacciones en Starknet, los [dos tipos de transacciones](https://book.starknet.io/chapter_8/transactions.html) son `DEPLOY` o `INVOKE`.
 
 ![graph](./assets/Invoke.png)
 <div align="center">
@@ -30,7 +30,7 @@ En primer lugar, se necesita validar la firma y comprobar que coincide con la ge
 <em>Información de la Lógica separada de las funciones validate, execute</em>
 </div>
 
-Cairo, así que analicemos cómo Cairo incorpora esta abstracción en su programación.
+Ahora analicemos cómo Cairo incorpora esta abstracción en su programación.
 
 Veamos cómo funciona un ciclo de transacción con AA nativa y cómo se representa gráficamente este ciclo completo de firmas para detectar si es correcto y realizar la operación.
 
@@ -41,7 +41,9 @@ También pensemos en cómo se podrían combinar de manera eficiente firmas como 
 <em>Ciclo completo de una firma y validación de una trnasacción</em>
 </div>
 
-Los conocimientos previos adquiridos nos han enseñado muchas cosas, una de ellas es cómo Shor puede teóricamente romper ECDSA, pero no podrá romper una prueba STARKs, como veremos en la sección de generación de STARKs, gracias a sus bases de criptografía simétrica y otras variables. Sin embargo, si alguien nos roba, hackea o perdemos la cuenta, el esquema **PQS** para la prueba no será de mucha utilidad, ya que no se ha alterado la integridad del estado de los datos. Solo se habrá obtenido tu PK, lo que permitiría mover los fondos de forma justa.
+Los conocimientos previos adquiridos nos han enseñado muchas cosas, una de ellas es cómo el algoritmo de Shor puede teóricamente romper ECDSA, pero no podrá romper una prueba STARK. 
+
+En la sección de generación de STARKs, aprenderemos como gracias a sus bases de criptografía simétrica y otras variables, si alguien nos roba, hackea o perdemos la cuenta, el esquema **PQS** para la prueba no será de mucha utilidad, ya que no se ha alterado la integridad del estado de los datos, sino que por oun teórico ataque criptoanalítico se habrá obtenido tu PK, lo que permitiría mover los fondos de forma justa.
 
 **Pero, ¿qué sucedería si tuviéramos un esquema de verificación de firmas seguro frente a un ataque cuántico?**
 

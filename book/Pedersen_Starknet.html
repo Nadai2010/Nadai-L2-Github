@@ -145,7 +145,7 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="pedersen-hash-starknet"><a class="header" href="#pedersen-hash-starknet">Pedersen Hash Starknet</a></h1>
-<p>El <a href="https://docs.starknet.io/documentation/architecture_and_concepts/Hashing/hash-functions/#pedersen_hash">Pedersen hash</a> es una función hash criptográfica utilizada en criptografía y criptografía de curvas elípticas. Fue propuesto por Torben Pedersen en 1991 y se utiliza para calcular hashes de datos.</p>
+<p>El <a href="https://docs.starknet.io/documentation/architecture_and_concepts/Hashing/hash-functions/#pedersen_hash">Pedersen hash</a> es una función hash criptográfica utilizada en criptografía propuesta por Torben Pedersen en 1991.</p>
 <p>Uno de los aspectos interesantes del <a href="https://en.wikipedia.org/wiki/Commitment_scheme">esquema de compromiso de Pedersen</a> es su propiedad homomórfica, que permite realizar la adición entre dos compromisos. En otras palabras, dados dos mensajes <code>m₁</code> y <code>m₂</code>, y sus respectivas aleatoriedades <code>r₁</code> y <code>r₂</code>, el Pedersen hash permite combinarlos de manera segura.</p>
 <p>La función Pedersen Hash utilizada en Starknet es resistente a colisiones para entradas de longitud fija, siempre y cuando la función de codificación subyacente sea inyectiva. Una función inyectiva asigna elementos distintos de su dominio a elementos distintos de su codominio, esto hace que el Pedersen hash sea resistente a ciertos tipos de ataques, como colisiones y preimágenes.</p>
 <p>Sin embargo, es importante destacar que la implementación y el contexto en el que se utilice esta función pueden influir en su resistencia. Para obtener más información se recomienda realizar una lectura sobre <a href="https://research.nccgroup.com/2023/03/22/breaking-pedersen-hashes-in-practice/">Pedersen hashes in Practice</a>.</p>
@@ -197,22 +197,6 @@
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script>
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 
