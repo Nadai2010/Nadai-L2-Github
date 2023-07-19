@@ -39,3 +39,5 @@
         - [FRI](./Starks_Fri.md)
     - [Leve introducción a Cairo (AIR)](./Cairo.md)
     - [Conclusiones](./Conclusión.md)
+- [Arquitectura Starkware](./Arquitectura_Starkware.md)
+- [Otras Arquitecturas](./Otras_Arquitecturas.md)
