@@ -1,6 +1,16 @@
 [book]
-authors = ["Nadai2010"]
-language = "en"
+authors = ["Nadai2010 y L2 en Español"]
+language = "es"
 multilingual = false
 src = "src"
 title = "L2 Book"
+
+[build]
+extra-watch-dirs = ["po"]
+
+[preprocessor.gettext]
+after = ["links"]
+
+[output.html.fold]
+enable = true
+level = 0

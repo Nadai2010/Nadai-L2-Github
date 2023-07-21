@@ -1,5 +1,5 @@
 # Pedersen Hash Starknet
-El [Pedersen hash](https://docs.starknet.io/documentation/architecture_and_concepts/Hashing/hash-functions/#pedersen_hash) es una función hash criptográfica utilizada en criptografía y criptografía de curvas elípticas. Fue propuesto por Torben Pedersen en 1991 y se utiliza para calcular hashes de datos.
+El [Pedersen hash](https://docs.starknet.io/documentation/architecture_and_concepts/Hashing/hash-functions/#pedersen_hash) es una función hash criptográfica utilizada en criptografía propuesta por Torben Pedersen en 1991.
 
 Uno de los aspectos interesantes del [esquema de compromiso de Pedersen](https://en.wikipedia.org/wiki/Commitment_scheme) es su propiedad homomórfica, que permite realizar la adición entre dos compromisos. En otras palabras, dados dos mensajes `m₁` y `m₂`, y sus respectivas aleatoriedades `r₁` y `r₂`, el Pedersen hash permite combinarlos de manera segura.
 

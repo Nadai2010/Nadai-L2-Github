@@ -61,14 +61,14 @@ function playground_text(playground, hidden = true) {
                         win: "Ctrl-Enter",
                         mac: "Ctrl-Enter"
                     },
-                    exec: _editor => run_rust_code(playground_block)
+                    exec: _editor => run_cairo_code(playground_block)
                 });
             }
         }
     }
 
     // updates the visibility of play button based on `no_run` class and
-    // used crates vs ones available on https://play.rust-lang.org
+    // used crates vs ones available on http://play.rust-lang.org
     function update_play_button(pre_block, playground_crates) {
         var play_button = pre_block.querySelector(".play-button");
 
@@ -97,6 +97,30 @@ function playground_text(playground, hidden = true) {
         } else {
             play_button.classList.add("hidden");
         }
+    }
+
+    function run_cairo_code(code_block) {
+        var result_block = code_block.querySelector(".result");
+        if (!result_block) {
+            result_block = document.createElement('code');
+            result_block.className = 'result hljs language-bash';
+
+            code_block.append(result_block);
+        }
+
+        let text = playground_text(code_block);
+
+        result_block.innerText = "Running...";
+        window.runFunc(text).then(data => {
+            if (data.trim() === '') {
+                result_block.innerText = "No output";
+                result_block.classList.add("result-no-output");
+            } else {
+                result_block.innerText = data;
+                result_block.classList.remove("result-no-output");
+            }
+        })
+        .catch(error => result_block.innerText = "Playground Communication: " + error.message);
     }
 
     function run_rust_code(code_block) {
@@ -179,7 +203,7 @@ function playground_text(playground, hidden = true) {
     // even if highlighting doesn't apply
     code_nodes.forEach(function (block) { block.classList.add('hljs'); });
 
-    Array.from(document.querySelectorAll("code.hljs")).forEach(function (block) {
+    Array.from(document.querySelectorAll("code.language-rust")).forEach(function (block) {
 
         var lines = Array.from(block.querySelectorAll('.boring'));
         // If no lines were hidden, return
@@ -253,7 +277,8 @@ function playground_text(playground, hidden = true) {
 
         buttons.insertBefore(runCodeButton, buttons.firstChild);
         runCodeButton.addEventListener('click', function (e) {
-            run_rust_code(pre_block);
+            // run_rust_code(pre_block);
+            run_cairo_code(pre_block);
         });
 
         if (window.playground_copyable) {

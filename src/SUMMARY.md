@@ -19,47 +19,25 @@
         - [Kyber Crystal](./Kyber_Crystal.md)
         - [EOA y AA - Firmantes](./EOA_AA.md)
     - [Starknet AA](./Starknet_AA.md)
-
-EC en Cairo - STARK Curve
-
-MyBraavos Secp256r1
-
-Creación de una Stark Key en StarkEx
-
-Starknet y Funciones Hash
-
-Hash Keccak
-
-Hash Pedersen
-
-Hash Poseidon
-
-Hashing de Array
-
-S-T-ARKs
-
-Propiedades de las STARKs
-
-STARKs eficientes
-
-IOPs
-
-Polinomios
-
-Creación de una STARK
-
-Aritmetización
-
-Polinomio para nuestra Traza
-
-Composición Polinomial
-
-Ampliando Polinomio
-
-Pruebas de Bajo Grado
-
-FRI
-
-Leve introducción a Cairo (AIR)
-
-Conclusiones
+        - [EC en Cairo - STARK Curve](./Stark_Curve.md)
+        - [MyBraavos Secp256r1](./Secp256r1.md)
+        - [Creación de una Stark Key en StarkEx](./Stark_Key.md)
+    - [Starknet y Funciones Hash](Starknet_funciones_hash.md)
+        - [Hash Keccak](./Keccak_Starknet.md)
+        - [Hash Pedersen](./Pedersen_Starknet.md)
+        - [Hash Poseidon](./Poseidon_Starknet.md)
+        - [Hashing de Array](./Hashing_Array.md)
+    - [S-T-ARKs](./Starks.md)   
+        - [Propiedades de las STARKs](./Starks_Propiedades.md)
+        - [STARKs eficientes](./Starks_Eficientes.md)
+        - [IOPs](./Starks_Iops.md)
+        - [Polinomios](./Starks_Polinomios.md)
+    - [Creación de un STARK](./Starks_Creacion.md)
+        - [Aritmetización](./Starks_Aritmetizacion.md)
+        - [Polinomio y Composición para nuestra Traza](./Starks_Traza.md)
+        - [Pruebas de Bajo Grado](./Starks_Bajo.md)
+        - [FRI](./Starks_Fri.md)
+    - [Leve introducción a Cairo (AIR)](./Cairo.md)
+    - [Conclusiones](./Conclusión.md)
+- [Arquitectura Starkware](./Arquitectura_Starkware.md)
+- [Otras Arquitecturas](./Otras_Arquitecturas.md)
