@@ -1,7 +1,7 @@
 [book]
 authors = ["Nadai2010 y L2 en Español"]
 language = "es"
-multilingual = false
+multilingual = true
 src = "src"
 title = "L2 Book"
 
