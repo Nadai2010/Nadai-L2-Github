@@ -29,8 +29,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Install mdbook
-        uses: ./.github/workflows/install-mdbook
+      - name: Install mdBook
+        uses: gpeace/mdbook-action@v0.3.1
 
       - name: Build in English
         run: |
